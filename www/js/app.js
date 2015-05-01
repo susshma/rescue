@@ -48,7 +48,35 @@ var rescue = angular.module('rescue', ['ionic'])
         controller: 'MissingDetailstCtrl'
       }
     }
-  });
+  })
+  .state('app.volunteer', {
+    url: "/volunteer",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/volunteer.html",
+        controller: 'VolunteerCtrl'
+      }
+    }
+  })
+  .state('app.volunteerdetails', {
+    url: "/volunteerdetails/:volunteerId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/missing.html",
+        controller: 'VolunteerDetailsCtrl'
+      }
+    }
+  })
+  .state('app.createMissing', {
+    url: "/missing/create",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/createMissing.html",
+        controller: 'CreateMissingCtrl'
+      }
+    }
+  })
+  ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/missing');
 });
