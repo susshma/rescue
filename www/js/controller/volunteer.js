@@ -1,13 +1,46 @@
 rescue.controller('VolunteerCtrl', function($scope) {
-  $scope.playlists = [
-    { name: 'Reggae', id: 1, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-    { name: 'Reggae', id: 2, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-    { name: 'Reggae', id: 3, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-    { name: 'Reggae', id: 4, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-    { name: 'Reggae', id: 5, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-    { name: 'Reggae', id: 6, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
+  $scope.volunteerList = [
+    { 
+        name: 'Sunny Singh',
+        phone: 402-301-9137,
+        email: 'sing@gmail.com',
+        occupation: 'Doctor',
+        location: 'Sanepa Basi',
+        gender: 'M',
+        description: 'MR handsome'
+     },
+     { 
+        name: 'Sunny Singh',
+        phone: 402-301-9137,
+        email: 'sing@gmail.com',
+        occupation: 'Doctor',
+        location: 'Sanepa Basi',
+        gender: 'M',
+        description: 'MR handsome'
+     },
+     { 
+        name: 'Sunny Singh',
+        phone: 402-301-9137,
+        email: 'sing@gmail.com',
+        occupation: 'Doctor',
+        location: 'Sanepa Basi',
+        gender: 'M',
+        description: 'MR handsome'
+     },
+     { 
+        name: 'Sunny Singh',
+        phone: 402-301-9137,
+        email: 'sing@gmail.com',
+        occupation: 'Doctor',
+        location: 'Sanepa Basi',
+        gender: 'M',
+        description: 'MR handsome'
+     }
   ];
 })
 
 .controller('VolunteerDetailstCtrl', function($scope, $stateParams) {
+})
+.controller('CreateVolunteerCtrl', function($scope, $stateParams) {
 });
+;

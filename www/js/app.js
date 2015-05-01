@@ -67,6 +67,15 @@ var rescue = angular.module('rescue', ['ionic'])
       }
     }
   })
+  .state('app.createVolunteer', {
+    url: "/volunteer/create",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/createVolunteer.html",
+        controller: 'CreateVolunteerCtrl'
+      }
+    }
+  })
   .state('app.createMissing', {
     url: "/missing/create",
     views: {
@@ -79,4 +88,10 @@ var rescue = angular.module('rescue', ['ionic'])
   ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/missing');
-});
+})
+
+.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate',function($scope, $ionicSideMenuDelegate) {
+    $scope.toggleLeftSideMenu = function() {
+        $ionicSideMenuDelegate.toggleLeft();
+    };
+}]);
