@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js test
-var rescue = angular.module('rescue', ['ionic'])
+var rescue = angular.module('rescue', ['ionic', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -93,6 +93,15 @@ var rescue = angular.module('rescue', ['ionic'])
       }
     }
   })
+  .state('app.editMissing', {
+    url: "/missing/edit/:personId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/createMissing.html",
+        controller: 'EditMissingCtrl'
+      }
+    }
+  })
   .state('app.governmentcontacts', {
     url: "/governmentcontacts",
     views: {
@@ -108,6 +117,33 @@ var rescue = angular.module('rescue', ['ionic'])
       'menuContent': {
         templateUrl: "templates/commonlist.html",
         controller: 'MedicalSitesCtrl'
+      }
+    }
+  })
+  .state('app.sheltersites', {
+    url: "/sheltersites",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/commonlist.html",
+        controller: 'ShelterSitesCtrl'
+      }
+    }
+  })
+  .state('app.emergency', {
+    url: "/emergencycontacts",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/commonlist.html",
+        controller: 'EmergencyContactsCtrl'
+      }
+    }
+  })
+  .state('app.supply', {
+    url: "/supply",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/commonlist.html",
+        controller: 'SupplyCtrl'
       }
     }
   })

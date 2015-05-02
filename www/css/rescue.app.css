@@ -16,11 +16,12 @@ ion-side-menu ion-content ion-list .item {
   ion-side-menu ion-content ion-list .item .item-content {
     background: #e6e6e4;
     padding: 15px 21px;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 14px;
     line-height: 23px;
     border-bottom: 1px solid #eaeae8;
-    border-top: 1px solid #edeee9; }
+    border-top: 1px solid #edeee9;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
 ion-side-menu ion-content ion-list .divider {
   height: 2px;
   background-color: #dcddd8;
@@ -30,8 +31,26 @@ ion-side-menu ion-content ion-list .divider {
   margin-top: 10px;
   border-radius: 0px;
   text-align: left;
+  border: 1px solid #dad2d2;
   border-left: 5px #37cec5 solid;
-  font-size: 16px; }
+  font-size: 14px;
+  color: #626064; }
+  .tile .header {
+    border-bottom: 1px dotted gray; }
+  .tile .icon {
+    margin-left: 8px;
+    font-size: 22px;
+    color: #38cfc6;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+  .tile .link {
+    float: right;
+    font-size: 25px; }
+  .tile .icon-left {
+    float: left;
+    margin-right: 8px;
+    font-size: 22px;
+    color: #38cfc6;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
   .tile .title {
     font-size: 20px;
     font-weight: bold; }
@@ -54,4 +73,12 @@ ion-side-menu ion-content ion-list .divider {
   font-size: 30px;
   margin-right: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-  color: #38cfc6; }
+  color: #dc143c; }
+
+.img-wrapper {
+  font-weight: bold;
+  border-radius: 100px;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border: 5px solid white; }

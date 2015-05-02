@@ -37,8 +37,47 @@ rescue.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
     {},
   ]
 
+  $scope.title = "Government Contacts";
+
 })
 .controller('MedicalSitesCtrl', function ($scope) {
+  $scope.list = [
+    {title: ""},
+    {},
+    {},
+  ]
+
+  $scope.title = "Medical Sites";
+
+})
+.controller('EmergencyContactsCtrl', function ($scope) {
+  $scope.list = [
+    {title: ""},
+    {},
+    {},
+  ]
+
+  $scope.title = "Emergency Contacts";
+
+})
+.controller('SupplyCtrl', function ($scope) {
+  $scope.list = [
+    {title: ""},
+    {},
+    {},
+  ]
+
+  $scope.title = "Food and water supply";
+
+})
+.controller('ShelterSitesCtrl', function ($scope) {
+  $scope.list = [
+    {title: ""},
+    {},
+    {},
+  ]
+
+  $scope.title = "Shelter Sites";
 
 })
 .controller('HomeCtrl', function ($scope) {
