@@ -18,46 +18,5 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
-@import
-
-  // Variables
-  "www/lib/ionic/scss/ionicons/ionicons.scss",
-  "www/lib/ionic/scss/mixins",
-  "www/lib/ionic/scss/variables",
-
-  // Base
-  "www/lib/ionic/scss/reset",
-  "www/lib/ionic/scss/scaffolding",
-  "www/lib/ionic/scss/type",
-
-  // Components
-  "www/lib/ionic/scss/action-sheet",
-  "www/lib/ionic/scss/backdrop",
-  "www/lib/ionic/scss/bar",
-  "www/lib/ionic/scss/tabs",
-  "www/lib/ionic/scss/menu",
-  "www/lib/ionic/scss/modal",
-  //"www/lib/ionic/scss/popover",
-  "www/lib/ionic/scss/popup",
-  "www/lib/ionic/scss/loading",
-  "www/lib/ionic/scss/items",
-  "www/lib/ionic/scss/list",
-  "www/lib/ionic/scss/badge",
-  "www/lib/ionic/scss/slide-box",
-
-  // Forms
-  "www/lib/ionic/scss/checkbox",
-  "www/lib/ionic/scss/toggle",
-  "www/lib/ionic/scss/radio",
-  "www/lib/ionic/scss/range",
-  "www/lib/ionic/scss/select",
-  "www/lib/ionic/scss/progress",
-
-  // Buttons
-  "www/lib/ionic/scss/button",
-  "www/lib/ionic/scss/button-bar",
-
-  // Util
-  "www/lib/ionic/scss/animations",
-  "www/lib/ionic/scss/util",
-  "www/lib/ionic/scss/platform";
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";

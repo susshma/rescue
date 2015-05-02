@@ -6,8 +6,13 @@
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
-        	<div ng-repeat="comments in playlists">
-        	</div>
+            <div ng-repeat="comment in comments">
+                <div class="tile">
+                    {{ comment.name }}
+                    {{ comment.phone }}
+                    {{ comment.comment }}
+                </div>
+            </div>
         </div>
     </div>
   </ion-content>

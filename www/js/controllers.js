@@ -30,3 +30,17 @@ rescue.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
     }, 1000);
   };
 })
+.controller('GovernmentContactsCtrl', function ($scope) {
+  $scope.list = [
+    {title: ""},
+    {},
+    {},
+  ]
+
+})
+.controller('MedicalSitesCtrl', function ($scope) {
+
+})
+.controller('HomeCtrl', function ($scope) {
+
+})

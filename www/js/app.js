@@ -29,7 +29,15 @@ var rescue = angular.module('rescue', ['ionic'])
     templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
   })
-
+  .state('app.home', {
+    url: "/home",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/home.html",
+        controller: 'MissingCtrl'
+      }
+    }
+  })
   .state('app.missing', {
     url: "/missing",
     views: {
@@ -85,13 +93,31 @@ var rescue = angular.module('rescue', ['ionic'])
       }
     }
   })
+  .state('app.governmentcontacts', {
+    url: "/governmentcontacts",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/commonlist.html",
+        controller: 'GovernmentContactsCtrl'
+      }
+    }
+  })
+  .state('app.medicalsites', {
+    url: "/medicalsites",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/commonlist.html",
+        controller: 'MedicalSitesCtrl'
+      }
+    }
+  })
   ;
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/missing');
+  $urlRouterProvider.otherwise('/app/home');
 })
 
-.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate',function($scope, $ionicSideMenuDelegate) {
-    $scope.toggleLeftSideMenu = function() {
-        $ionicSideMenuDelegate.toggleLeft();
-    };
+.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate',function($scope, $ionicHistory) {
+  // $scope.myGoBack = function() {
+  //   $ionicHistory.goBack();
+  // };
 }]);

@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-repeat="playlist in playlists| searchFor:searchString" class="row" ng-animate="'animate'" href="#/app/playlists/{{playlist.id}}">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-repeat="playlist in missingList| searchFor:searchString" class="row" ng-animate="'animate'">
             <a href="#/app/details/{{playlist.id}}">
                 <div class="tile">
                     <span class="title">{{ playlist.name }}{{ playlist.gender }}</span>
