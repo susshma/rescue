@@ -6,8 +6,9 @@
     <title></title>
 
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/ionic.app.min.css" rel="stylesheet">
+    
     <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/ionic.app.min.css" rel="stylesheet">
     <link href="lib/animate/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/rescue.app.css" rel="stylesheet">
@@ -20,8 +21,14 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- firebase -->
-    <script src="lib/firebase/firebase.js"></script>
-    <script src="lib/angularfire/dist/angularfire.js"></script>
+    <!-- // <script src="lib/firebase/firebase.js"></script>
+    // <script src="lib/angularfire/dist/angularfire.js"></script> -->
+
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -32,7 +39,8 @@
     <script src="js/controller/missing.js"></script>
     <script src="js/controller/volunteer.js"></script>
     <script src="js/filters/searchBy.js"></script>
-     <script src="js/services/missingservice.js"></script>
+    <script src="js/services/missingservice.js"></script>
+    <script src="js/services/volunteerservices.js"></script>
   </head>
 
   <body ng-app="rescue">

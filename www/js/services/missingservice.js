@@ -1,25 +1,22 @@
-rescue.service('MissingService', function () {
+rescue.service('MissingService', function ($firebaseArray) {
     var ref = new Firebase("https://rescuenepal.firebaseIO.com/missing");
     var missingRef = ref.child("missing");
     
     this.getMissing= function(personId) {
-        return list[personId];
+        var list = $firebaseArray(missingRef);
+        return list.$getRecord(personId);
     };
 
     this.getMissingList = function () {
         return missingRef;
-
     };
 
     this.addMissing = function (formdata) {
-        missingRef.push({
-            "name": formdata.name,
-            "nationality": formdata.nationality,
-            "phone": formdata.phone,
-            "last_location": formdata.last_location,
-            "email": formdata.email,
-            "posted_by": formdata.posted_by,
-            "description": formdata.description
+        var list = $firebaseArray(missingRef);
+        list.$add(formdata).then(function(ref) {
+          var id = ref.key();
+          console.log("added record with id " + id);
+          list.$indexFor(id); // returns location in the array
         });
     }
 });

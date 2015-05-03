@@ -1,34 +1,25 @@
-rescue.controller('MissingCtrl', function($scope, $ionicActionSheet, $timeout, MissingService, $firebase) {
-  // $scope.missingList = [
-  //   { name: 'Reggae', id: 1, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-  //   { name: 'Reggae', id: 2, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-  //   { name: 'Reggae', id: 3, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-  //   { name: 'Reggae', id: 4, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-  //   { name: 'Reggae', id: 5, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-  //   { name: 'Reggae', id: 6, description: 'Tall dark brown', gender: '', country: '', details: '', img: 'test.jpg' },
-  // ];
-    var list = $firebase(MissingService.getMissingList()).$asArray();
+rescue.controller('MissingCtrl', function($scope, $ionicActionSheet, $timeout, MissingService, $firebaseArray) {
+    var list = $firebaseArray(MissingService.getMissingList());
     $scope.missingList = list;
-  // Triggered on a button click, or some other target
-  $scope.show = function() {
+    // Triggered on a button click, or some other target
+    $scope.show = function() {
 
-   // Show the action sheet
-   var hideSheet = $ionicActionSheet.show({
-     destructiveText: 'Delete',
-     cancelText: 'Cancel',
-     cancel: function() {
-          // add cancel code..
-        },
-     buttonClicked: function(index) {
-       return true;
-     }
-   });
+        // Show the action sheet
+        var hideSheet = $ionicActionSheet.show({
+            destructiveText: 'Delete',
+            cancelText: 'Cancel',
+            cancel: function() {
+            // add cancel code..
+            },
+            buttonClicked: function(index) {
+                return true;
+            }
+        });
 
-   // For example's sake, hide the sheet after two seconds
-   $timeout(function() {
-     hideSheet();
-   }, 5000);
-  };
+    // For example's sake, hide the sheet after two seconds
+    $timeout(function() {
+        hideSheet();
+    }, 5000)};
 })
 
 .controller('MissingDetailstCtrl', function($scope, $stateParams) {
@@ -51,9 +42,12 @@ rescue.controller('MissingCtrl', function($scope, $ionicActionSheet, $timeout, M
     }
 })
 
-.controller('EditMissingCtrl', function($scope, $stateParams) {
+.controller('EditMissingCtrl', function($scope, $stateParams, MissingService) {
 
     $scope.action = "Edit"
 
-    $scope.form = { name: 'Reggae', id: 1, description: 'Tall dark brown', gender: '', nationality: 'Nepal', img: 'test.jpg' }
+    var data = MissingService.getMissing($stateParams.personId);
+
+    $scope.form = data;
+
 });

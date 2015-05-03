@@ -10,29 +10,52 @@
     <div class="row-fluid">
         <div class="form-group">
             <div class="col-sm-12">
-                <input type="text" class="form-control" id="firstname" placeholder="search" ng-model="searchString">
+                <input type="text" class="form-control" id="firstname" placeholder="search by name, email, occupation and donation items" ng-model="searchString">
             </div>
         </div>
     </div>
     <div class="row-fluid">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="volunteer in volunteerList" href="#/app/playlists/{{playlist.id}}">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="volunteer in volunteerList | searchForVolunteer:searchString" href="#/app/playlists/{{playlist.id}}">
             <div class="tile">
                 <div class="header">
                     <span class="ion-female icon-left">{{ volunteer.gender }}</span>
-                    <span class="title">{{ volunteer.name }}</span>
+                    <span class="title">{{ volunteer.fname }}{{ volunteer.lname }}</span>
                     <span class="ion-ios-compose-outline icon"></span>
                     <span class="ion-ios-trash icon" ng-click="show()"></span>
                 </div>
                 <div class="clear"></div>
-                Phone: <span class="">{{ volunteer.phone }}</span><br/>
+                <span class="">Phone: </span>
+                <span class="pull-right">{{ volunteer.phone }}</span><br/>
                 <div class="clear"></div>
-                Email: <span class="">{{ volunteer.email }}</span><br/>
+                <span class="">Email: </span>
+                <span class="pull-right">{{ volunteer.email }}</span><br/>
                 <div class="clear"></div>
-                Occupation: <span class="">{{ volunteer.gender }}</span><br/>
+                <span class="">Address: </span>
+                <span class="pull-right">{{ volunteer.address }}</span><br/>
                 <div class="clear"></div>
-                Location: <span>{{ volunteer.location }}</span><br/>
+                <span class="">Occupation: </span>
+                <span class="pull-right">{{ volunteer.occupation }}</span><br/>
                 <div class="clear"></div>
-                Description: <span>{{ volunteer.description}}</span><br/>
+                <span class="">Donation items: </span>
+                <span class="pull-right" ng-repeat = "item in volunteer.donationitemsselected">
+                    {{ item }}, 
+                </span>
+                <br/>
+                <div class="clear"></div>
+                <span class="">Willing to take items: </span>
+                <span class="pull-right">
+                    {{ volunteer.takematerial }}
+                </span>
+                <br/>
+                <div class="clear"></div>
+                <span class=""># of Medical Professionals: </span>
+                <span class="pull-right">{{ volunteer.medicalprof}}</span><br/>
+                <div class="clear"></div>
+                <span class="">Travel date: </span>
+                <span class="pull-right">{{ volunteer.traveldate }}</span><br/>
+                <div class="clear"></div>
+                <span class="">Description: </span>
+                <span class="pull-right">{{ volunteer.description}}</span><br/>
                 <div class="clear"></div>
             </div>
         </div>

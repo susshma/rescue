@@ -8,50 +8,85 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="firstname">First Name</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="firstname">
+                                    <input type="text" class="form-control" id="firstname" value="{{ form.fname }}" ng-model="form.fname">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="lastname">Last Name</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="lastname">
+                                    <input type="text" class="form-control" id="lastname" value="{{ form.lname }}" ng-model="form.lname">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="phone">Phone</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="phone" placeholder="optional">
+                                    <input type="text" class="form-control" id="phone" placeholder="optional" value="{{ form.phone }}" ng-model="form.phone">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="email">Email</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="email" placeholder="optional">
+                                    <input type="text" class="form-control" id="email" placeholder="optional" value="{{ form.email }}" ng-model="form.email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="city">Address</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="city" placeholder="optional" value="{{ form.address }}" ng-model="form.address">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="address1">Occupation</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="address1" placeholder="optional">
+                                    <input type="text" class="form-control" id="address1" placeholder="optional" value="{{ form.occupation }}" ng-model="form.occupation">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label" for="city">Location</label>
-                                <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="city" placeholder="optional">
+                                <label class="col-sm-3 control-label" for="state">Are you collecting any of following donation items</label>
+                                <div class="col-sm-9">
+                                    <label class="checkbox-inline" ng-repeat="item in donationitems">
+                                      <input type="checkbox" id="inlineCheckbox1" value="option1" ng-model="item.checked">
+                                      {{ item.value }}
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label" for="state">Description</label>
+                                <label class="col-sm-3 control-label" for="address1">Number of Medical professional traveling with you if any</label>
                                 <div class="col-sm-2">
-                                    <input type="text" class="form-control" id="state" placeholder="optional">
+                                    <input type="text" class="form-control" id="address1" placeholder="optional" value="{{ form.medprof }}" ng-model="form.medprof">
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="address1">Willing to take relief materials collected by others</label>
+                                <div class="col-sm-9">
+                                    <label class="radio-inline">
+                                      <input type="radio" value="yes" ng-model="form.takematerial">
+                                      Yes
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" value="no" ng-model="form.takematerial">
+                                      No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="address1">Travel date</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="address1" placeholder="optional" value="{{ form.traveldate }}" ng-model="form.traveldate">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="address1">Description</label>
+                                <div class="col-sm-5">
+                                    <textarea rows="6" class="form-control" id="description" placeholder="optional" placeholder="optional" value="{{ form.description }}" ng-model="form.description"></textarea>
+                                </div>
+                                {{ form }}
                             </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-3">
-                        <button type="submit" class="btn btn-primary" id="add_lead_submit">Add Lead</button>
+                        <button type="submit" class="btn btn-primary" id="add_lead_submit" ng-click="save()">Save</button>
                     </div>
                 </div>
             </form>
