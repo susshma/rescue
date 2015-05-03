@@ -26,7 +26,6 @@ rescue.controller('MissingCtrl', function($scope, $ionicActionSheet, $timeout, M
 })
 
 .controller('MissingDetailstCtrl', function($scope, $stateParams) {
-    $scope.tab = missing;
     $scope.comments = [
         { name: "Test User", comment: "I've seen him some where last", phone: "9841092192", email: "test@gmail.com"},
         { name: "Test User", comment: "I've seen him some where last", phone: "9841092192", email: "test@gmail.com"},
@@ -35,7 +34,6 @@ rescue.controller('MissingCtrl', function($scope, $ionicActionSheet, $timeout, M
 })
 
 .controller('CreateMissingCtrl', function($scope, $stateParams,$window, MissingService) {
-    $scope.tab = 'missing';
     $scope.action = "Add";
     $scope.form = {};
 
@@ -47,7 +45,6 @@ rescue.controller('MissingCtrl', function($scope, $ionicActionSheet, $timeout, M
 })
 
 .controller('EditMissingCtrl', function($scope, $stateParams, MissingService) {
-    $scope.tab = 'missing';
     $scope.action = "Edit"
 
     var data = MissingService.getMissing($stateParams.personId);
