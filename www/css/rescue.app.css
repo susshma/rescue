@@ -12,16 +12,19 @@ ion-nav-bar .icon {
   color: white; }
 
 ion-side-menu ion-content ion-list .item {
-  background: #e6e6e4; }
+  background: #F0ECEC; }
   ion-side-menu ion-content ion-list .item .item-content {
-    background: #e6e6e4;
+    background: #F0ECEC;
     padding: 15px 21px;
     font-size: 14px;
     line-height: 23px;
-    border-bottom: 1px solid #eaeae8;
-    border-top: 1px solid #edeee9;
     text-transform: uppercase;
     letter-spacing: 2px; }
+ion-side-menu ion-content ion-list .item.active {
+  border-left: 10px solid #55bc75;
+  color: #E74C3C; }
+  ion-side-menu ion-content ion-list .item.active .menu-icon {
+    color: #ed5d3a; }
 ion-side-menu ion-content ion-list .divider {
   height: 2px;
   background-color: #dcddd8;
@@ -31,12 +34,18 @@ ion-side-menu ion-content ion-list .divider {
   margin-top: 10px;
   border-radius: 0px;
   text-align: left;
-  border: 1px solid #dad2d2;
-  border-left: 5px #37cec5 solid;
+  border: 1px solid #F0ECEC;
   font-size: 14px;
-  color: #626064; }
+  color: #626064;
+  border-radius: 10px;
+  background: #f5f0ec; }
   .tile .header {
-    border-bottom: 1px dotted gray; }
+    margin: -14px;
+    padding: 15px;
+    background: #55bc75;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; }
   .tile .icon {
     margin-left: 8px;
     font-size: 22px;
@@ -44,7 +53,8 @@ ion-side-menu ion-content ion-list .divider {
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
   .tile .link {
     float: right;
-    font-size: 25px; }
+    font-size: 25px;
+    color: #fff; }
   .tile .icon-left {
     float: left;
     margin-right: 8px;
@@ -67,13 +77,17 @@ ion-side-menu ion-content ion-list .divider {
     color: #fff; }
 
 .menu .scroll-content {
-  background: #e6e6e4; }
+  background: #F0ECEC;
+  background: url('/img/nepal.jpg'); }
+  .menu .scroll-content .scroll {
+    opacity: 0.8; }
 
 .menu-icon {
-  font-size: 30px;
+  font-size: 25px;
   margin-right: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-  color: #dc143c; }
+  color: #bfb8b2;
+  float: right; }
 
 .img-wrapper {
   font-weight: bold;
@@ -82,3 +96,17 @@ ion-side-menu ion-content ion-list .divider {
   width: 100px;
   height: 100px;
   border: 5px solid white; }
+
+.add-link {
+  text-align: right;
+  margin-bottom: 10px; }
+  .add-link .menu-icon {
+    font-size: 24px;
+    color: #E74C3C; }
+
+h4 {
+  color: #34495e;
+  display: block;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-size: 29px;
+  font-weight: bold; }

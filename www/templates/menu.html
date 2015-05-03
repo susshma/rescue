@@ -21,11 +21,11 @@
         <ion-item>
           <img src="img/logo" width="250px"/>
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/missing">
-          <span class="ion-android-contacts menu-icon"></span>Missing
+        <ion-item nav-clear menu-close href="#/app/missing" ng-class="{'active': tab == 'missing'}">
+          <span class="ion-android-contacts menu-icon"></span>Missing {{ state }}
         </ion-item>
         <div class="divider"></div>
-        <ion-item nav-clear menu-close href="#/app/volunteer">
+        <ion-item nav-clear menu-close href="#/app/volunteer" class="active">
           <span class="ion-android-hand menu-icon"></span>
           Volunteer
         </ion-item>
@@ -52,7 +52,9 @@
           Food Water Organization
         </ion-item>
         <div class="divider"></div>
-
+        <ion-item nav-clear menu-close href="#/app/supply" style="height: 400px;">
+        </ion-item>
+        <div class="divider"></div>
       </ion-list>
     </ion-content>
   </ion-side-menu>

@@ -1,7 +1,7 @@
 <ion-view view-title="Missing People">
   <ion-content>
     <div class="row-fluid">
-        <div class="col-lg-12">
+        <div class="col-lg-12 add-link">
             <a href="#/app/missing/create">
                 <span class="ion-plus-circled menu-icon"> Add New</span>
             </a>
@@ -9,7 +9,7 @@
     </div>
     <div class="row-fluid">
         <div class="form-group">
-            <div class="col-sm-12">
+            <div class="col-sm-12 add-link">
                 <input type="text" class="form-control" id="firstname" placeholder="search" ng-model="searchString">
             </div>
         </div>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="clear"></div>
                     <div class="pull-right img-wrapper"><img width="100px" src="img/people/img.jpg" /></div>
-                    <div class="clear"></div>
+                    <div class="clear"></div><br/>
                     Nationality: <span>{{ missing.nationality }}</span><br/>
                     <div class="clear"></div>
                     Last location: <span>{{ missing.last_location }}</span><br/>

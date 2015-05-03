@@ -28,17 +28,24 @@ ion-side-menu {
         ion-list {
 
             .item {
-                background: #e6e6e4;
+                background: #F0ECEC;
 
                 .item-content {
-                    background: #e6e6e4;
+                    background: #F0ECEC;
                     padding: 15px 21px;
                     font-size: 14px;
                     line-height: 23px;
-                    border-bottom: 1px solid #eaeae8;
-                    border-top: 1px solid #edeee9;
                     text-transform: uppercase;
                     letter-spacing: 2px;
+                }
+            }
+
+            .item.active {
+                border-left: 10px solid #55bc75;
+                color: #E74C3C;
+
+                .menu-icon {
+                    color: #ed5d3a;
                 }
             }
 
@@ -55,13 +62,19 @@ ion-side-menu {
     margin-top: 10px;
     border-radius: 0px;
     text-align: left;
-    border: 1px solid rgb(218, 210, 210);
-    border-left: 5px #37cec5 solid;
+    border: 1px solid #F0ECEC;
     font-size: 14px;
     color: #626064;
+    border-radius: 10px;
+    background: #f5f0ec;
 
     .header {
-        border-bottom: 1px dotted gray;
+        margin: -14px;
+        padding: 15px;
+        background: #55bc75;
+        color: #fff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 
     .icon {
@@ -74,6 +87,7 @@ ion-side-menu {
     .link {
         float: right;
         font-size: 25px;
+        color: #fff;
     }
 
     .icon-left {
@@ -109,14 +123,20 @@ ion-side-menu {
 }
 
 .menu .scroll-content {
-    background: #e6e6e4;
+    background: #F0ECEC;
+    background: url('/img/nepal.jpg');
+
+    .scroll {
+        opacity: 0.8;
+    }
 }
 
 .menu-icon {
-    font-size: 30px;
+    font-size: 25px;
     margin-right: 20px;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-    color: #dc143c;
+    color: #bfb8b2;
+    float: right;
 }
 
 .img-wrapper {
@@ -126,4 +146,22 @@ ion-side-menu {
   width: 100px;
   height: 100px;
   border: 5px solid white;
+}
+
+.add-link {
+    text-align: right;
+    margin-bottom: 10px;
+
+    .menu-icon {
+        font-size: 24px;
+        color: #E74C3C;
+    }
+}
+
+h4 {
+    color: rgb(52, 73, 94);
+    display: block;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-size: 29px;
+    font-weight: bold;
 }

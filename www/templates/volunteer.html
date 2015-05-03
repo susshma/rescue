@@ -1,7 +1,7 @@
 <ion-view view-title="Volunteer">
   <ion-content>
     <div class="row-fluid">
-        <div class="col-lg-12">
+        <div class="col-lg-12 add-link">
             <a href="#/app/volunteer/create">
                 <span class="ion-plus-circled menu-icon"> Add New</span>
             </a>
@@ -9,7 +9,7 @@
     </div>
     <div class="row-fluid">
         <div class="form-group">
-            <div class="col-sm-12">
+            <div class="col-sm-12 add-link">
                 <input type="text" class="form-control" id="firstname" placeholder="search by name, email, occupation and donation items" ng-model="searchString">
             </div>
         </div>
@@ -23,7 +23,7 @@
                     <span class="ion-ios-compose-outline icon"></span>
                     <span class="ion-ios-trash icon" ng-click="show()"></span>
                 </div>
-                <div class="clear"></div>
+                <div class="clear"></div><br/>
                 <span class="">Phone: </span>
                 <span class="pull-right">{{ volunteer.phone }}</span><br/>
                 <div class="clear"></div>

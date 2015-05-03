@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js test
-var rescue = angular.module('rescue', ['ionic', 'firebase'])
+var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -152,8 +152,6 @@ var rescue = angular.module('rescue', ['ionic', 'firebase'])
   $urlRouterProvider.otherwise('/app/home');
 })
 
-.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate',function($scope, $ionicHistory) {
-  // $scope.myGoBack = function() {
-  //   $ionicHistory.goBack();
-  // };
+.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate',function($scope, $state) {
+  $scope.state = $state;
 }]);
