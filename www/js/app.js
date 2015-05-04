@@ -70,7 +70,7 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router'])
     url: "/volunteerdetails/:volunteerId",
     views: {
       'menuContent': {
-        templateUrl: "templates/missing.html",
+        templateUrl: "templates/volunteerDetails.html",
         controller: 'VolunteerDetailsCtrl'
       }
     }
@@ -167,8 +167,9 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router'])
 
 .controller('MenuCtrl', ['$scope', '$ionicSideMenuDelegate',function($scope, $state, $location) {
 
-  $scope.isActive = function (viewLocation) { 
-      return viewLocation === window.location.hash;
+  $scope.isActive = function (viewLocation) {
+      var tab = window.location.hash.split("/")[2];
+      return viewLocation === tab;
   };
   
 }]);

@@ -2,19 +2,22 @@
   <ion-content>
     <div class="container-fluid">
             <h4>{{ action }} Volunteer</h4>
-            <form role="form" class="form-horizontal">
+            <form role="form" class="form-horizontal" ng-submit="submitForm(volunteerform.$valid)" novalidate name="volunteer">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : volunteer.fname.$invalid && !volunteer.fname.$pristine }">
                                 <label class="col-sm-3 control-label" for="firstname">First Name</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="firstname" value="{{ form.fname }}" ng-model="form.fname">
+                                    <input type="text" class="form-control" id="firstname" name="fname" value="{{ form.fname }}" ng-model="form.fname"
+                                    required >
+                                    <p ng-show="volunteer.fname.$invalid && !volunteer.fname.$pristine" class="help-block">You name is required.</p>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : volunteer.lname.$invalid && !volunteer.lname.$pristine }">
                                 <label class="col-sm-3 control-label" for="lastname">Last Name</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="lastname" value="{{ form.lname }}" ng-model="form.lname">
+                                    <input type="text" class="form-control" id="lastname" value="{{ form.lname }}" ng-model="form.lname" name="lname" required>
+                                    <p ng-show="volunteer.lname.$invalid && !volunteer.lname.$pristine" class="help-block">You name is required.</p>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -26,7 +29,14 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="email">Email</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="email" placeholder="optional" value="{{ form.email }}" ng-model="form.email">
+                                    <input type="email" class="form-control" id="email" placeholder="optional" value="{{ form.email }}" ng-model="form.email" name="email">
+                                    <p ng-show="volunteer.email.$invalid && !volunteer.email.$pristine" class="help-block">Enter a valid email.</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="email">Name of organization assosciated with</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="email" placeholder="optional" value="{{ form.organization }}" ng-model="form.organization">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -85,7 +95,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-3">
-                        <button type="submit" class="btn btn-primary" id="add_lead_submit" ng-click="save()">Save</button>
+                        <button type="submit" class="btn btn-primary" id="add_lead_submit" ng-click="save()" ng-disabled="volunteerform.$invalid">Save</button>
                     </div>
                 </div>
             </form>

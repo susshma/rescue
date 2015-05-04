@@ -21,33 +21,33 @@
         <ion-item>
           <img src="img/logo" width="250px"/>
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/missing" ng-class="{'active': isActive('#/app/missing') }" >
+        <ion-item nav-clear menu-close href="#/app/missing" ng-class="{'active': isActive('missing') || isActive('details') }" >
           <span class="ion-android-contacts menu-icon"></span>Missing
         </ion-item>
         <div class="divider"></div>
-        <ion-item nav-clear menu-close href="#/app/volunteer" ng-class="{'active': isActive('#/app/volunteer')}">
+        <ion-item nav-clear menu-close href="#/app/volunteer" ng-class="{'active': isActive('volunteer') || isActive('volunteerdetails')}">
           <span class="ion-android-hand menu-icon"></span>
           Volunteer
         </ion-item>
         <div class="divider"></div>
-        <ion-item nav-clear menu-close href="#/app/governmentcontacts" ng-class="{'active': isActive('#/app/governmentcontacts')}" >
+        <ion-item nav-clear menu-close href="#/app/governmentcontacts" ng-class="{'active': isActive('governmentcontacts')}" >
           Government Contacts {{ isActive }}
         </ion-item>
         <div class="divider"></div>
-        <ion-item nav-clear menu-close href="#/app/medicalsites" ng-class="{'active': isActive('#/app/medicalsites')}" >
+        <ion-item nav-clear menu-close href="#/app/medicalsites" ng-class="{'active': isActive('medicalsites')}" >
           <span class="ion-medkit menu-icon"></span>
           Medical Sites {{ isActive }}
         </ion-item>
         <div class="divider"></div>
-        <ion-item nav-clear menu-close href="#/app/sheltersites" ng-class="{'active': isActive('#/app/sheltersites')}">
+        <ion-item nav-clear menu-close href="#/app/sheltersites" ng-class="{'active': isActive('sheltersites')}">
           <span class="ion-ios-home menu-icon"></span>Shelter Sites {{ isActive }}
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/emergencycontacts" ng-class="{'active': isActive('#/app/emergencycontacts')}">
+        <ion-item nav-clear menu-close href="#/app/emergencycontacts" ng-class="{'active': isActive('emergencycontacts')}">
           <span class="ion-android-call menu-icon"></span>
           Emergency Contacts
         </ion-item>
         <div class="divider"></div>
-        <ion-item nav-clear menu-close href="#/app/supply" ng-class="{'active': isActive('#/app/supply')}">
+        <ion-item nav-clear menu-close href="#/app/supply" ng-class="{'active': isActive('supply')}">
           <span class="ion-android-call menu-icon"></span>
           Food Water Organization
         </ion-item>

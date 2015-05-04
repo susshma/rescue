@@ -32,7 +32,12 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
     };   
 })
 
-.controller('VolunteerDetailstCtrl', function($scope, $stateParams) {
+.controller('VolunteerDetailsCtrl', function($scope, $stateParams, VolunteerService) {
+    var list = VolunteerService.getVolunteerList();
+
+    list.$loaded().then(function(list) {
+        $scope.volunteer= list.$getRecord($stateParams.volunteerId);
+    }); 
 })
 
 .controller('CreateVolunteerCtrl', function($scope, $stateParams, VolunteerService, $window) {
@@ -65,6 +70,17 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
         { "value": "Clothes", "checked": false },
         { "value": "Other", "checked": false },
     ];
+
+    // function to submit the form after all validation has occurred            
+    $scope.submitForm = function(isValid) {
+
+        // check to make sure the form is completely valid
+        if (isValid) {
+            alert('our form is amazing');
+        }
+
+    };
+
 })
 .controller('EditVolunteerCtrl', function($scope, $stateParams, VolunteerService) {
     $scope.action = "Edit"
@@ -74,11 +90,13 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
     list.$loaded().then(function(list) {
         $scope.form = list.$getRecord($stateParams.volunteerId);
         // check the selected ones
-        $scope.donationitems.forEach(function (key, value){
-            if ($scope.form.donationitemsselected.indexOf(key.value) !== -1 ) {
-                key.checked = true;
-            }
-        });
+        if ($scope.form.donationitemsselected) {
+            $scope.donationitems.forEach(function (key, value){
+                if ($scope.form.donationitemsselected.indexOf(key.value) !== -1 ) {
+                    key.checked = true;
+                }
+            });
+        }
     }); 
 
     $scope.donationitems = [
@@ -91,6 +109,10 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
         { "value": "Clothes", "checked": false },
         { "value": "Other", "checked": false },
     ];
+
+    $scope.save = function () {
+
+    }
 });
 
 

@@ -4,9 +4,9 @@ rescue.service('VolunteerService', function ($firebaseArray) {
     var list = $firebaseArray(volunteerRef);
     
     this.getVolunteer= function(volunteerId) {
-    	list.$loaded().then(function(list) {
-    		return list.$getRecord(volunteerId);
-		}); 
+        list.$loaded().then(function(list) {
+            return list.$getRecord(volunteerId);
+        }); 
     };
 
     this.getVolunteerList = function () {
@@ -15,9 +15,17 @@ rescue.service('VolunteerService', function ($firebaseArray) {
 
     this.addVolunteer = function (formdata) { 
         list.$add(formdata).then(function(ref) {
-          	var id = ref.key();
-          	console.log("added record with id " + id);
-          	list.$indexFor(id); // returns location in the array
+            var id = ref.key();
+            console.log("added record with id " + id);
+            list.$indexFor(id); // returns location in the array
         });
+    }
+
+    this.saveVolunteer = function (formdata) {
+        list.$save(formdata).then(function(ref) {
+            var id = ref.key();
+            console.log("added record with id " + id);
+            list.$indexFor(id); // returns location in the array
+        }); 
     }
 });
