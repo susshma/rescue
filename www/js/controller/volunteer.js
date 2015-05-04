@@ -4,7 +4,7 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
     $scope.volunteerList = list;
 
     $scope.remove = function (index) {
-        $scope.show();
+        //$scope.show();
         var id = list.$getRecord(index);
         list.$remove(id);
     };
