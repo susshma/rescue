@@ -1,0 +1,60 @@
+<ion-view view-title="Add New Missing Person">
+  <ion-content>
+    <div class="container-fluid">
+            <h4>Add </h4>
+            <form role="form" class="form-horizontal">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="firstname">Name</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="name" value="{{ form.name }}" ng-model="form.name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="lastname">Nationality</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="nationality" value="{{ form.nationality }}" ng-model="form.nationality" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="phone">Phone</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="phone" placeholder="optional" value="{{ form.phone }}" ng-model="form.phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="email">Last location</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="email" placeholder="optional" value="{{ form.last_location }}" ng-model="form.last_location">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="state">Email</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="state" placeholder="optional" value="{{ form.email }}" ng-model="form.email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="zip">Posted By</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="zip" placeholder="optional" value="{{ form.posted_by}}" ng-model="form.posted_by">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="city">Description</label>
+                                <div class="col-sm-5">
+                                    <textarea rows="6" class="form-control" id="description" placeholder="optional" placeholder="optional" value="{{ form.description }}" ng-model="form.description"></textarea>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-3">
+                        <button type="submit" class="btn btn-primary" id="add_lead_submit" ng-click="save()">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+  </ion-content>
+</ion-view>

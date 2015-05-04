@@ -2,7 +2,7 @@ rescue.controller('MissingCtrl', function($scope, $ionicActionSheet, $timeout, M
     $scope.isActive = function(route) {
         return route === $location.path();
     }
-    var list = $firebaseArray(MissingService.getMissingList());
+    var list = MissingService.getMissingList();
     $scope.missingList = list;
     // Triggered on a button click, or some other target
     $scope.show = function() {
@@ -47,8 +47,8 @@ rescue.controller('MissingCtrl', function($scope, $ionicActionSheet, $timeout, M
 .controller('EditMissingCtrl', function($scope, $stateParams, MissingService) {
     $scope.action = "Edit"
 
-    var data = MissingService.getMissing($stateParams.personId);
-
-    $scope.form = data;
-
+    var list = MissingService.getMissingList();
+    list.$loaded().then(function(list) {
+        $scope.form = list.$getRecord($stateParams.personId);
+    }); 
 });

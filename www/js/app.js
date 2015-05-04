@@ -27,7 +27,7 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router'])
     url: "/app",
     abstract: true,
     templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
+    controller: 'MenuCtrl'
   })
   .state('app.home', {
     url: "/home",
@@ -163,4 +163,12 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router'])
 
 .controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate',function($scope, $state) {
   $scope.state = $state;
+}])
+
+.controller('MenuCtrl', ['$scope', '$ionicSideMenuDelegate',function($scope, $state, $location) {
+
+  $scope.isActive = function (viewLocation) { 
+      return viewLocation === window.location.hash;
+  };
+  
 }]);

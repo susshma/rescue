@@ -1,18 +1,17 @@
 rescue.service('MissingService', function ($firebaseArray) {
     var ref = new Firebase("https://rescuenepal.firebaseIO.com/missing");
     var missingRef = ref.child("missing");
+    var list = $firebaseArray(missingRef);
     
-    this.getMissing= function(personId) {
-        var list = $firebaseArray(missingRef);
+    this.getMissing= function(personId) { 
         return list.$getRecord(personId);
     };
 
     this.getMissingList = function () {
-        return missingRef;
+        return list;
     };
 
     this.addMissing = function (formdata) {
-        var list = $firebaseArray(missingRef);
         list.$add(formdata).then(function(ref) {
           var id = ref.key();
           console.log("added record with id " + id);
