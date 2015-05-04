@@ -84,6 +84,15 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router'])
       }
     }
   })
+  .state('app.editVolunteer', {
+    url: "/volunteer/edit/:volunteerId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/createVolunteer.html",
+        controller: 'EditVolunteerCtrl'
+      }
+    }
+  })
   .state('app.createMissing', {
     url: "/missing/create",
     views: {
