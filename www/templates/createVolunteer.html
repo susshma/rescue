@@ -26,7 +26,7 @@
                                     <input type="text" class="form-control" id="phone" placeholder="optional" value="{{ form.phone }}" ng-model="form.phone">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : volunteer.email.$invalid && !volunteer.email.$pristine }">
                                 <label class="col-sm-3 control-label" for="email">Email</label>
                                 <div class="col-sm-5">
                                     <input type="email" class="form-control" id="email" placeholder="optional" value="{{ form.email }}" ng-model="form.email" name="email">
@@ -59,7 +59,6 @@
                                       {{ item.value }}
                                     </label>
                                 </div>
-                                {{ form }}
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label" for="address1">Number of Medical professional traveling with you if any</label>
