@@ -82,7 +82,7 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
     };
 
 })
-.controller('EditVolunteerCtrl', function($scope, $stateParams, VolunteerService) {
+.controller('EditVolunteerCtrl', function($scope, $stateParams, VolunteerService, $window) {
     $scope.action = "Edit"
 
     var list = VolunteerService.getVolunteerList();
@@ -97,7 +97,17 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
                 }
             });
         }
+        $scope.form.donationitemsselected = $scope.form.donationitemsselected || [];
     }); 
+
+    $scope.$watch('donationitems', function(newValues){
+        $scope.form.donationitemsselected.length = 0;
+            angular.forEach(newValues, function(item) {
+                if (item.checked == true) {
+                    $scope.form.donationitemsselected.push(item.value);
+                }
+            });
+    }, true);
 
     $scope.donationitems = [
         { "value": "Money", "checked": false },
@@ -111,7 +121,8 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
     ];
 
     $scope.save = function () {
-
+        VolunteerService.saveVolunteer($scope.form);
+         $window.location.href ='/#/app/volunteer'
     }
 });
 

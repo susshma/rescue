@@ -19,11 +19,11 @@
             <div class="tile">
                 <div class="header">
                     <span class="ion-female icon-left">{{ volunteer.gender }}</span>
-                    <span class="title">{{ volunteer.fname }}{{ volunteer.lname }}</span>
+                    <span class="title">{{ volunteer.fname }} &nbsp;{{ volunteer.lname }}</span>
                     <a href="#/app/volunteer/edit/{{ volunteer.$id }}">
                         <span class="ion-ios-compose-outline icon" ng-click="edit(volunteer.$id)"></span>
                     </a>
-                    <span class="ion-ios-trash icon" ng-click="remove(volunteer.$id)" ></span>
+                    <!--<span class="ion-ios-trash icon" ng-click="remove(volunteer.$id)" ></span>-->
                     <a href="#/app/volunteerdetails/{{volunteer.$id}}" class="link"> <i class="ion-chevron-right"></i></a>
                 </div>
                 <div class="clear"></div><br/>
