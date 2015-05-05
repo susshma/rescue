@@ -98,9 +98,8 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
             });
         }
         $scope.form.donationitemsselected = $scope.form.donationitemsselected || [];
-    }); 
 
-    $scope.$watch('donationitems', function(newValues){
+        $scope.$watch('donationitems', function(newValues){
         $scope.form.donationitemsselected.length = 0;
             angular.forEach(newValues, function(item) {
                 if (item.checked == true) {
@@ -108,6 +107,7 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
                 }
             });
     }, true);
+    }); 
 
     $scope.donationitems = [
         { "value": "Money", "checked": false },
