@@ -1,0 +1,41 @@
+<ion-view view-title="Add Organizations">
+  <ion-content>
+    <div class="row-fluid">
+        <div class="col-lg-12 add-link">
+            <a href="#/app/organiztion/create">
+                <span class="ion-plus-circled menu-icon"> Add New</span>
+            </a>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="form-group">
+            <div class="col-sm-12 add-link">
+                <input type="text" class="form-control" id="firstname" placeholder="search" ng-model="searchString">
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="(key, organization) in list| searchFor:searchString" class="row" ng-animate="'animate'">
+                <div class="tile">
+                    <div class="header">
+                        <!-- <span class="ion-female icon-left"></span> -->
+                        <span class="title">{{ organization.name }}</span>
+                    </div>
+                    <div class="clear"></div>
+                    <!--<div class="pull-right img-wrapper"><img width="100px" src="img/people/img.jpg" /></div> -->
+                    <div class="clear"></div><br/>
+                    Address: <span>{{ organization.address }}</span><br/>
+                    <div class="clear"></div>
+                    City: <span>{{ organization.last_location }}</span><br/>
+                    <div class="clear"></div>
+                    Phone: <span>{{ organization.phone }}</span><br/>
+                    <div class="clear"></div>
+                    Email: <span>{{ organization.email }}</span><br/>
+                    <div class="clear"></div>
+                    Description: <span>{{ organization.description }}</span><br/>
+                    <div class="clear"></div>
+                </div>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

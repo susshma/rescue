@@ -1,0 +1,60 @@
+<ion-view view-title="Add new volunteer organization">
+  <ion-content>
+    <div class="container-fluid">
+            <h4>{{ action }} Organization</h4>
+            <form role="form" class="form-horizontal" ng-submit="submitForm(organization.$valid)" novalidate name="organization">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                            <div class="form-group" ng-class="{ 'has-error' : organization.name.$invalid && !organization.name.$pristine }">
+                                <label class="col-sm-3 control-label" for="name"> Name</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="name" name="name" value="{{ form.name }}" ng-model="form.name"
+                                    required >
+                                    <p ng-show="organization.name.$invalid && !organization.name.$pristine" class="help-block">Name is required.</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="phone">Phone</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="phone" placeholder="optional" value="{{ form.phone }}" ng-model="form.phone">
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : volunteer.email.$invalid && !volunteer.email.$pristine }">
+                                <label class="col-sm-3 control-label" for="email">Email</label>
+                                <div class="col-sm-5">
+                                    <input type="email" class="form-control" id="email" placeholder="optional" value="{{ form.email }}" ng-model="form.email" name="email">
+                                    <p ng-show="volunteer.email.$invalid && !volunteer.email.$pristine" class="help-block">Enter a valid email.</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="city">Address</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="city" placeholder="optional" value="{{ form.address }}" ng-model="form.address">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="state">Are you collecting any of following donation items</label>
+                                <div class="col-sm-9">
+                                    <label class="checkbox-inline" ng-repeat="item in donationitems">
+                                      <input type="checkbox" id="inlineCheckbox1" value="option1" ng-model="item.checked">
+                                      {{ item.value }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="address1">Description</label>
+                                <div class="col-sm-5">
+                                    <textarea rows="6" class="form-control" id="description" placeholder="optional" placeholder="optional" value="{{ form.description }}" ng-model="form.description"></textarea>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-3">
+                        <button type="submit" class="btn btn-primary" id="add_lead_submit" ng-click="save()" ng-disabled="organization.$invalid">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+  </ion-content>
+</ion-view>

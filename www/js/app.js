@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js test
-var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router'])
+var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router', 'flow'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -156,6 +156,24 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router'])
       }
     }
   })
+  .state('app.organization', {
+    url: "/organizations",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/organization.html",
+        controller: 'OrganizationCtrl'
+      }
+    }
+  })
+  .state('app.createOrganization', {
+    url: "/organiztion/create",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/createOrganization.html",
+        controller: 'CreateOrganizationCtrl'
+      }
+    }
+  })
   ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
@@ -172,4 +190,19 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router'])
       return viewLocation === tab;
   };
   
+}])
+.config(['flowFactoryProvider', function (flowFactoryProvider) {
+  flowFactoryProvider.defaults = {
+    target: 'upload.php',
+    permanentErrors: [404, 500, 501],
+    maxChunkRetries: 1,
+    chunkRetryInterval: 5000,
+    simultaneousUploads: 4,
+    singleFile: true
+  };
+  flowFactoryProvider.on('catchAll', function (event) {
+    console.log('catchAll', arguments);
+  });
+  // Can be used with different implementations of Flow.js
+  // flowFactoryProvider.factory = fustyFlowFactory;
 }]);

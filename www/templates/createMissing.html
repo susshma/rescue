@@ -47,8 +47,37 @@
                                     <textarea rows="6" class="form-control" id="description" placeholder="optional" placeholder="optional" value="{{ form.description }}" ng-model="form.description"></textarea>
                                 </div>
                             </div>
+                            <div flow-init="{singleFile:true,target:'img/missing'}"
+                                flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+                                flow-files-submitted="$flow.upload()"
+                            >
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="city">Picture (PNG,GIF,JPG,JEPG)</label>
+                                    <div class="col-sm-5">
+                                        <div class="thumbnail" ng-show="!$flow.files.length" style="border: 1px solid #bdc3c7;">
+                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image">
+                                        </div>
+                                        <div class="thumbnail ng-hide" ng-show="$flow.files.length" style="border: 1px solid #bdc3c7;">
+                                          <img flow-img="$flow.files[0]" width="200">
+                                        </div>
+                                        <div>
+                                            <span class="btn btn-primary" ng-show="!$flow.files.length" flow-btn="">
+                                                Select image
+                                                <input type="file" style="visibility: hidden; position: absolute;">
+                                            </span>
+                                            <span class="btn btn-info ng-hide" ng-show="$flow.files.length" flow-btn="">
+                                                Change<input type="file" style="visibility: hidden; position: absolute;">
+                                            </span>
+                                            <span class="btn btn-danger ng-hide" ng-show="$flow.files.length" ng-click="$flow.cancel()">
+                                                Remove
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
                     </div>
-                </div>
+                            
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-3">
                         <button type="submit" class="btn btn-primary" id="add_lead_submit" ng-click="save()">Save</button>
