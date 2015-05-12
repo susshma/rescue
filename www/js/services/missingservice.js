@@ -1,4 +1,4 @@
-rescue.service('MissingService', function ($firebaseArray) {
+rescue.service('MissingService', function ($firebaseArray, $http) {
     var ref = new Firebase("https://rescuenepal.firebaseIO.com/missing");
     var missingRef = ref.child("missing");
     var list = $firebaseArray(missingRef);
@@ -16,6 +16,12 @@ rescue.service('MissingService', function ($firebaseArray) {
           var id = ref.key();
           console.log("added record with id " + id);
           list.$indexFor(id); // returns location in the array
+        });
+    }
+
+    this.getCountries = function () { 
+        $http.get('https://restcountries.eu/rest/v1/all').success(function(data) {
+            return data;
         });
     }
 });

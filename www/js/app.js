@@ -185,7 +185,7 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router', 'flow']
   })
   ;
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/app/volunteer');
 })
 
 .controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate',function($scope, $state) {

@@ -25,7 +25,7 @@
                             <div class="form-group" ng-class="{ 'has-error' : volunteer.phone.$error.pattern }">
                                 <label class="col-sm-3 control-label" for="phone">Phone</label>
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="phone" placeholder="optional" value="{{ form.phone }}" ng-model="form.phone" ng-pattern="/^[0-9_]*$/" name="phone">
+                                    <input type="text" class="form-control" id="phone" placeholder="optional" value="{{ form.phone }}" ng-model="form.phone" ng-pattern="/^[0-9- ]*$/" name="phone">
                                     <p ng-show="volunteer.phone.$error.pattern" class="help-block">Enter valid phone number</p>
                                 </div>
                             </div>
