@@ -71,7 +71,51 @@ rescue.controller('OrganizationCtrl', function($scope, $ionicActionSheet, $timeo
 
     };
 
+})
+.controller('EditOrganizationCtrl', function($scope, $stateParams, OrganizationService, $window) {
+    $scope.action = "Edit"
+
+    var list = OrganizationService.getOrganizationList();
+
+    list.$loaded().then(function(list) {
+        $scope.form = list.$getRecord($stateParams.organizationId);
+        // check the selected ones
+    //     if ($scope.form.donationitemsselected) {
+    //         $scope.donationitems.forEach(function (key, value){
+    //             if ($scope.form.donationitemsselected.indexOf(key.value) !== -1 ) {
+    //                 key.checked = true;
+    //             }
+    //         });
+    //     }
+    //     $scope.form.donationitemsselected = $scope.form.donationitemsselected || [];
+
+    //     $scope.$watch('donationitems', function(newValues){
+    //     $scope.form.donationitemsselected.length = 0;
+    //         angular.forEach(newValues, function(item) {
+    //             if (item.checked == true) {
+    //                 $scope.form.donationitemsselected.push(item.value);
+    //             }
+    //         });
+    // }, true);
+    }); 
+
+    // $scope.donationitems = [
+    //     { "value": "Money", "checked": false },
+    //     { "value": "Food", "checked": false },
+    //     { "value": "Water", "checked": false },
+    //     { "value": "Tent", "checked": false },
+    //     { "value": "Medical supplies", "checked": false },
+    //     { "value": "Sanitary items", "checked": false },
+    //     { "value": "Clothes", "checked": false },
+    //     { "value": "Other", "checked": false },
+    // ];
+
+    $scope.save = function () {
+        OrganizationService.saveOrganization($scope.form);
+         $window.location.href ='/#/app/organization'
+    }
 });
+
 
 
 

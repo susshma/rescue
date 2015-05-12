@@ -14,4 +14,11 @@ rescue.service('OrganizationService', function ($firebaseArray) {
           list.$indexFor(id); // returns location in the array
         });
     }
+    this.saveOrganization = function (formdata) {
+        list.$save(formdata).then(function(ref) {
+            var id = ref.key();
+            console.log("added record with id " + id);
+            list.$indexFor(id); // returns location in the array
+        }); 
+    }
 });

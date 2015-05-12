@@ -20,19 +20,22 @@
                     <div class="header">
                         <!-- <span class="ion-female icon-left"></span> -->
                         <span class="title">{{ organization.name }}</span>
+                        <a href="#/app/organization/edit/{{ organization.$id }}">
+                            <span class="ion-ios-compose-outline icon"></span>
+                        </a>
                     </div>
                     <div class="clear"></div>
                     <!--<div class="pull-right img-wrapper"><img width="100px" src="img/people/img.jpg" /></div> -->
                     <div class="clear"></div><br/>
-                    Address: <span>{{ organization.address }}</span><br/>
+                    <strong>Address: </strong> <span>{{ organization.address }}</span><br/>
                     <div class="clear"></div>
-                    City: <span>{{ organization.last_location }}</span><br/>
+                    <strong>City: </strong><span>{{ organization.last_location }}</span><br/>
                     <div class="clear"></div>
-                    Phone: <span>{{ organization.phone }}</span><br/>
+                    <strong>Phone: </strong><span>{{ organization.phone }}</span><br/>
                     <div class="clear"></div>
-                    Email: <span>{{ organization.email }}</span><br/>
+                    <strong>Email: </strong><span>{{ organization.email }}</span><br/>
                     <div class="clear"></div>
-                    Description: <span>{{ organization.description }}</span><br/>
+                    <strong>Description: </strong><span>{{ organization.description }}</span><br/>
                     <div class="clear"></div>
                 </div>
         </div>

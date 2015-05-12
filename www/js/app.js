@@ -174,6 +174,15 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router', 'flow']
       }
     }
   })
+  .state('app.editOrganization', {
+    url: "/organization/edit/:organizationId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/createOrganization.html",
+        controller: 'EditOrganizationCtrl'
+      }
+    }
+  })
   ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');

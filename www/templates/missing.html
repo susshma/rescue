@@ -18,10 +18,10 @@
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="(key, missing) in missingList| searchFor:searchString" class="row" ng-animate="'animate'">
                 <div class="tile">
                     <div class="header">
-                        <span class="ion-female icon-left"></span>
-                        <span class="title">{{ missing.name }}{{ missing.gender }}</span>
+                        <!-- <span class="ion-female icon-left"></span> -->
+                        <span class="title">{{ missing.name }}</span>
                         <a href="#/app/missing/edit/{{missing.$id}}" ><span class="ion-ios-compose-outline icon"></span></a>
-                        <span class="ion-ios-trash icon" ng-click="show()"></span>
+                        <!-- <span class="ion-ios-trash icon" ng-click="show()"></span> -->
                         <a href="#/app/details/{{missing.$id}}" class="link"> <i class="ion-chevron-right"></i></a>
                     </div>
                     <div class="clear"></div>
