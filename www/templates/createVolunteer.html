@@ -22,6 +22,19 @@
                                     <p ng-show="volunteer.lname.$error.pattern" class="help-block">Enter valid last name(Alphabets only)</p>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="address1">Status</label>
+                                <div class="col-sm-9">
+                                    <label class="radio-inline">
+                                      <input type="radio" value="active" ng-model="form.status">
+                                      Active
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" value="inactive" ng-model="form.status">
+                                      Inactive
+                                    </label>
+                                </div>
+                            </div>
                             <div class="form-group" ng-class="{ 'has-error' : volunteer.phone.$error.pattern }">
                                 <label class="col-sm-3 control-label" for="phone">Phone</label>
                                 <div class="col-sm-3">
@@ -37,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label" for="email">Name of organization assosciated with</label>
+                                <label class="col-sm-3 control-label" for="email">Name of organization associated with</label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" id="email" placeholder="optional" value="{{ form.organization }}" ng-model="form.organization">
                                 </div>

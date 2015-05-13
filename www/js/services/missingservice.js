@@ -20,8 +20,6 @@ rescue.service('MissingService', function ($firebaseArray, $http) {
     }
 
     this.getCountries = function () { 
-        $http.get('https://restcountries.eu/rest/v1/all').success(function(data) {
-            return data;
-        });
+        return $http.get('https://restcountries.eu/rest/v1/all');
     }
 });

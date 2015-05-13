@@ -10,12 +10,12 @@
     <div class="row-fluid">
         <div class="form-group">
             <div class="col-sm-12 add-link">
-                <input type="text" class="form-control" id="firstname" placeholder="search" ng-model="searchString">
+                <input type="text" class="form-control" id="firstname" placeholder="search by name, city, address and description" ng-model="searchString">
             </div>
         </div>
     </div>
     <div class="row-fluid">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="(key, organization) in list| searchFor:searchString" class="row" ng-animate="'animate'">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="(key, organization) in list| searchForOrganization:searchString" class="row" ng-animate="'animate'">
                 <div class="tile">
                     <div class="header">
                         <!-- <span class="ion-female icon-left"></span> -->
@@ -29,7 +29,7 @@
                     <div class="clear"></div><br/>
                     <strong>Address: </strong> <span>{{ organization.address }}</span><br/>
                     <div class="clear"></div>
-                    <strong>City: </strong><span>{{ organization.last_location }}</span><br/>
+                    <strong>City: </strong><span>{{ organization.city }}</span><br/>
                     <div class="clear"></div>
                     <strong>Phone: </strong><span>{{ organization.phone }}</span><br/>
                     <div class="clear"></div>

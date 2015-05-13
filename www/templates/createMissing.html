@@ -25,9 +25,7 @@
                                 <label class="col-sm-3 control-label" for="lastname">Nationality</label>
                                 <div class="col-sm-3">
                                     <select type="text" class="form-control" id="nationality" value="{{ form.nationality }}" ng-model="form.nationality" ng-options="item.name as item.name for item in countries" >
-                                        {{ countries }}
                                     </select>
-                                    <div ng-repeat="item in country"> item.name </div>
                                 </div>
                             </div>
                             <div class="form-group">

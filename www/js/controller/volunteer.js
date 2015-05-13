@@ -37,7 +37,16 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
 
     list.$loaded().then(function(list) {
         $scope.volunteer= list.$getRecord($stateParams.volunteerId);
-    }); 
+        //$scope.volunteer.contacttimes = 
+    });
+
+    $scope.form = {};
+
+    $scope.form.comments = ["test comment1", "test comment2"];
+
+    $scope.save_comments = function () {
+        VolunteerService.saveVolunteer($scope.form);
+    }
 })
 
 .controller('CreateVolunteerCtrl', function($scope, $stateParams, VolunteerService, $window) {
@@ -119,11 +128,6 @@ rescue.controller('VolunteerCtrl', function($scope, $ionicActionSheet, $timeout,
         { "value": "Clothes", "checked": false },
         { "value": "Other", "checked": false },
     ];
-
-    $scope.save = function () {
-        VolunteerService.saveVolunteer($scope.form);
-         $window.location.href ='/#/app/volunteer'
-    }
 });
 
 

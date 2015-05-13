@@ -49,8 +49,8 @@ ion-side-menu ion-content ion-list .divider {
   .tile .icon {
     margin-left: 8px;
     font-size: 22px;
-    color: #38cfc6;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(76, 72, 72, 0.4); }
   .tile .link {
     float: right;
     font-size: 25px;
@@ -63,7 +63,8 @@ ion-side-menu ion-content ion-list .divider {
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
   .tile .title {
     font-size: 20px;
-    font-weight: bold; }
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(37, 35, 35, 0.4); }
   .tile .pull-right {
     font-weight: bold; }
 

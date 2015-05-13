@@ -43,11 +43,9 @@ rescue.controller('MissingCtrl', function($scope, $ionicActionSheet, $timeout, M
 
     }
 
-    // MissingService.getCountries().then(function(data) {
-    //     $scope.countries = data;
-    // });
-    // console.log($scope.countries)
-    // $scope.countries = [{'name':"test"}, {'name': "again"}]
+    MissingService.getCountries().then(function (data) {
+        $scope.countries = data.data;
+    });
 })
 
 .controller('EditMissingCtrl', function($scope, $stateParams, MissingService) {
