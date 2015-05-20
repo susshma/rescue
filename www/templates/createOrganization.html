@@ -13,6 +13,13 @@
                                     <p ng-show="organization.name.$invalid && !organization.name.$pristine" class="help-block">Name is required.</p>
                                 </div>
                             </div>
+                             <div class="form-group">
+                                <label class="col-sm-3 control-label" for="website">Website</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="website" placeholder="optional" value="{{ form.website }}" ng-model="form.website">
+                                </div>
+                            </div>
+
                             <div class="form-group" ng-class="{ 'has-error' : organization.phone.$error.pattern }">
                                 <label class="col-sm-3 control-label" for="phone">Phone</label>
                                 <div class="col-sm-3">
