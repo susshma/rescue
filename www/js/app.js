@@ -115,8 +115,17 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router', 'flow']
     url: "/governmentcontacts",
     views: {
       'menuContent': {
-        templateUrl: "templates/commonlist.html",
-        controller: 'GovernmentContactsCtrl'
+        templateUrl: "templates/governmentcontactlist.html",
+        controller: 'GovernmentListCtrl'
+      }
+    }
+  })
+  .state('app.governmentcontactscreate', {
+    url: "/governmentcontacts/create",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/governmentCreate.html",
+        controller: 'GovernmentCreateCtrl'
       }
     }
   })
@@ -125,7 +134,16 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router', 'flow']
     views: {
       'menuContent': {
         templateUrl: "templates/commonlist.html",
-        controller: 'MedicalSitesCtrl'
+        controller: 'MedicalListCtrl'
+      }
+    }
+  })
+  .state('app.medicalsitescreate', {
+    url: "/medicalsites/create",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/commonCreate.html",
+        controller: 'MedicalCreateCtrl'
       }
     }
   })
@@ -134,7 +152,7 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router', 'flow']
     views: {
       'menuContent': {
         templateUrl: "templates/commonlist.html",
-        controller: 'ShelterSitesCtrl'
+        controller: 'CommonListCtrl'
       }
     }
   })
@@ -143,7 +161,16 @@ var rescue = angular.module('rescue', ['ionic', 'firebase', 'ui.router', 'flow']
     views: {
       'menuContent': {
         templateUrl: "templates/commonlist.html",
-        controller: 'EmergencyContactsCtrl'
+        controller: 'CommonListCtrl'
+      }
+    }
+  })
+  .state('app.emergencycreate', {
+    url: "/emergencycontacts/create",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/emergencylist.html",
+        controller: 'EmergencyCreateCtrl'
       }
     }
   })
